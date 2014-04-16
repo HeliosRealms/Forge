@@ -1,9 +1,55 @@
 #Read Me
 
-####about
 This repo contains the Technic Solder files for HeliosRealms.
 
 Files uploaded to this repo will automatically be reflected to http://files.heliosrealms.com/solder/
+
+#the trick
+
+Once you get what's going on, this whole Solder thing is REALLY easy to understand.
+
+In Solder everything is called a MOD and all the "versions" of a mod are really just uniquely named zip files.
+
+Now here's what will actually happen.
+
+When you specify a "version" of a "mod" solder just takes that zip file and unpacks it in the root modpack folder when you launch the pack. That's it. It just unzippes it into the root modpack folder.
+
+So to get actual minecraft mods to show up in the mods folder you simply create a Solder zip that contains a "mods" folder which, in turn, contains the mod (and maybe it's submods ). When technic launches your pack it will unzip the Solder zip, merge the solder zip's "mods" folder with the modpack's "mods" folder and presto you just injected a mod into the game.
+
+For example, if you have a Solder zip file called
+```
+mycoolmod-v1.0.zip
+```
+then that's your versioned Solder zip file. If 'mycoolmod' is a minecraft mod then the Solder zip file should contain the following
+```
+	mods/
+		myCoolMod.TheACtualModfile.jar
+```
+When your pack runs, Solder will expand 'mycoolmod-v1.0' zip and merge it's mods folder into the main modpack.
+
+Why is this awesome? Because you can also do stuff like this...
+
+```
+	my-custom-configs-v1.0.zip
+		configs/
+			blah.cfg
+			foo.cfg
+			bar.cfg
+```
+and Solder will let you version your config files needed to make your pack work. When the pack runs it will just merge those configs into the modpack's "configs" folder for you automatically.
+
+and since Solder just willy-nilly unpacks zips, you could even create a Solder "mod" that is actually your pack's custom texture pack 
+```
+	my-pack-sphax-v2.4.zip
+		resourcepacks/
+			sphax.1.6.4.zip
+```
+Add "MyPack Sphax v2.4" to your modpack and that texture pack will be automatically available to people!
+
+That's the whole deal.
+
+Now for more detailed breakdowns, keep reading.
+
 
 #conventions
 
