@@ -150,3 +150,4 @@ For example to add a new version of ReactorCraft...
 Download Automator Workflow in this repo. It can help make this process less painful.
 
 It will automatically wrap whatever MOD you have slected in a 'mods' folder, zip it, and name it according to conventions
+
